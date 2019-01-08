@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quickbee/home.dart';
 import 'stacked_icons.dart';
 
 class LoginPage extends StatelessWidget {
@@ -29,23 +30,21 @@ class LoginPage extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
               child: new TextField(
-                decoration: new InputDecoration(
-                  labelText: 'Email'
-                ),
+                decoration: new InputDecoration(labelText: 'Email'),
               ),
             ),
             new SizedBox(
               height: 15.0,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 0.0),
               child: new TextField(
                 obscureText: true,
-                decoration: new InputDecoration(
-                  labelText: 'Password'
-                ),
+                decoration: new InputDecoration(labelText: 'Password'),
               ),
             ),
             new Row(
@@ -54,16 +53,23 @@ class LoginPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(
                         left: 20.0, right: 10.0, top: 10.0, bottom: 10.0),
-                    child: new Container(
-                      alignment: Alignment.center,
-                      height: 60.0,
-                      decoration: new BoxDecoration(
-                          color: Color(0xFF18D191),
-                          borderRadius: BorderRadius.circular(10.0)),
-                      child: new Text(
-                        "Login",
-                        style:
-                            new TextStyle(fontSize: 20.0, color: Colors.white),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => HomePage()
+                        ));
+                      },
+                      child: new Container(
+                        alignment: Alignment.center,
+                        height: 60.0,
+                        decoration: new BoxDecoration(
+                            color: Color(0xFF18D191),
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: new Text(
+                          "Login",
+                          style: new TextStyle(
+                              fontSize: 20.0, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
@@ -77,8 +83,10 @@ class LoginPage extends StatelessWidget {
                       height: 60.0,
                       child: new Text(
                         "Forgot Password?",
-                        style:
-                            new TextStyle(fontSize: 17.0, color: Color(0xFF18D191), fontWeight: FontWeight.bold),
+                        style: new TextStyle(
+                            fontSize: 17.0,
+                            color: Color(0xFF18D191),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
